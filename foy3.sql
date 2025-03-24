@@ -33,30 +33,30 @@ FOREIGN KEY (ikramiye_calisan_id) REFERENCES calisanlar(calisan_id) ON DELETE CA
 --2. soru
 
 INSERT INTO birimler (birim_id, birim_ad) VALUES
-(1, 'Yazýlým'),
-(2, 'Donaným'),
-(3, 'Güvenlik');
+(1, 'YazÄ±lÄ±m'),
+(2, 'DonanÄ±m'),
+(3, 'GÃ¼venlik');
 
 INSERT INTO calisanlar (calisan_id, ad, soyad, maas, katilmaTarihi, calisan_birim_id) VALUES
-(1, 'Ýsmail', 'Ýþeri', 100000, '2014-02-20', 1),
-(2, 'Hami', 'Satýlmýþ', 80000, '2014-06-11', 1),
-(3, 'Dumuþ', 'Þahin', 300000, '2014-02-20', 2),
-(4, 'Kaðan', 'Yazar', 500000, '2014-02-20', 3),
-(5, 'Meryem', 'Soysaldý', 500000, '2014-06-11', 3),
-(6, 'Duygu', 'Akþehir', 200000, '2014-02-20', 2),
-(7, 'Kübra', 'Seyhan', 75000, '2014-01-01', 1),
-(8, 'Gülcan', 'Yýldýz', 90000, '2014-04-11', 3);
+(1, 'Ä°smail', Ä°ÅŸeri', 100000, '2014-02-20', 1),
+(2, 'Hami', 'SatÄ±lmÄ±ÅŸ', 80000, '2014-06-11', 1),
+(3, 'DumuÅŸ', 'Åžahin', 300000, '2014-02-20', 2),
+(4, 'KaÄŸan', 'Yazar', 500000, '2014-02-20', 3),
+(5, 'Meryem', 'SoysaldÄ±', 500000, '2014-06-11', 3),
+(6, 'Duygu', 'AkÅŸehir', 200000, '2014-02-20', 2),
+(7, 'KÃ¼bra', 'Seyhan', 75000, '2014-01-01', 1),
+(8, 'GÃ¼lcan', 'YÄ±ldÄ±z', 90000, '2014-04-11', 3);
 
 
 INSERT INTO unvan (unvan_calisan_id, unvan_calisan, unvan_tarih) VALUES
-(1, 'Yonetici', '2016-02-20'),
+(1, 'YÃ¶netici', '2016-02-20'),
 (2, 'Personel', '2016-06-11'),
 (8, 'Personel', '2016-06-11'),
-(5, 'Müdür', '2016-06-11'),
-(4, 'Yonetici Yardýmcisý', '2016-06-11'),
+(5, 'MÃ¼dÃ¼r', '2016-06-11'),
+(4, 'YÃ¶netici YardÄ±mcÄ±sÄ±', '2016-06-11'),
 (7, 'Personel', '2016-06-11' ),
-(6, 'Takým Lideri', '2016-06-11' ),
-(3, 'Takým Lideri', '2016-06-11');
+(6, 'TakÄ±m Lideri', '2016-06-11' ),
+(3, 'TakÄ±m Lideri', '2016-06-11');
 
 INSERT INTO ikramiye (ikramiye_calisan_id, ikramiye_ucret, ikramiye_tarih) VALUES
 (1, 5000, '2016-02-20' ),
@@ -71,7 +71,7 @@ INSERT INTO ikramiye (ikramiye_calisan_id, ikramiye_ucret, ikramiye_tarih) VALUE
 SELECT c.ad, c.soyad, c.maas
 FROM calisanlar c
 JOIN birimler b ON c.calisan_birim_id = b.birim_id
-WHERE b.birim_ad = 'Yazýlým' OR b.birim_ad = 'Donaným';
+WHERE b.birim_ad = 'YazÄ±lÄ±m' OR b.birim_ad = 'DonanÄ±m';
 
 --4. soru
 
@@ -112,7 +112,7 @@ JOIN ikramiye i ON c.calisan_id = i.ikramiye_calisan_id;
 SELECT c.ad, c.soyad, u.unvan_calisan
 FROM unvan u
 JOIN calisanlar c ON u.unvan_calisan_id = c.calisan_id
-WHERE u.unvan_calisan IN ('Yonetici', 'Mudür');
+WHERE u.unvan_calisan IN ('Yonetici', 'MudÃ¼r');
 
 --10.soru
 
